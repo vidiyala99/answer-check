@@ -1,0 +1,137 @@
+[
+ {
+  "n": 1,
+  "url": "https://workos.com/docs/reference/authkit/password-reset",
+  "block": 1,
+  "line": 5,
+  "call": "user_management.get_password_reset",
+  "verdict": "wrong-arg",
+  "hint": "`user_management.get_password_reset`: `id_` is not a parameter; use `id`. Signature: `get_password_reset(id, *, request_options=None)`."
+ },
+ {
+  "n": 2,
+  "url": "https://workos.com/docs/reference/agents/blueprint/token/mint-token",
+  "block": 5,
+  "line": 5,
+  "call": "agents.validate_token",
+  "verdict": "unknown-method",
+  "hint": "`agents` has no method `validate_token`; did you mean `validate_blueprint_token`?"
+ },
+ {
+  "n": 3,
+  "url": "https://workos.com/docs/reference/authkit/user/get",
+  "block": 4,
+  "line": 5,
+  "call": "user_management.delete_user",
+  "verdict": "wrong-arg",
+  "hint": "`user_management.delete_user`: `id_` is not a parameter; use `id`. Signature: `delete_user(id, *, request_options=None)`."
+ },
+ {
+  "n": 4,
+  "url": "https://workos.com/docs/reference/authkit/user/confirm-email-change",
+  "block": 9,
+  "line": 5,
+  "call": "user_management.send_email_change",
+  "verdict": "wrong-arg",
+  "hint": "`user_management.send_email_change`: `id_` is not a parameter; use `id`. Signature: `send_email_change(id, *, new_email, locale=None, request_options=None)`."
+ },
+ {
+  "n": 5,
+  "url": "https://workos.com/docs/reference/authkit/user/delete",
+  "block": 7,
+  "line": 5,
+  "call": "user_management.get_user",
+  "verdict": "wrong-arg",
+  "hint": "`user_management.get_user`: `id_` is not a parameter; use `id`. Signature: `get_user(id, *, request_options=None)`."
+ },
+ {
+  "n": 6,
+  "url": "https://workos.com/docs/reference/domain-verification/create",
+  "block": 2,
+  "line": 5,
+  "call": "organization_domains.get_organization_domain",
+  "verdict": "wrong-arg",
+  "hint": "`organization_domains.get_organization_domain`: `id_` is not a parameter; use `id`. Signature: `get_organization_domain(id, *, request_options=None)`."
+ },
+ {
+  "n": 7,
+  "url": "https://workos.com/docs/reference/authkit/waitlist/find",
+  "block": 4,
+  "line": 5,
+  "call": "user_management.get_waitlist",
+  "verdict": "wrong-arg",
+  "hint": "`user_management.get_waitlist`: `id_` is not a parameter; use `id`. Signature: `get_waitlist(id, *, request_options=None)`."
+ },
+ {
+  "n": 8,
+  "url": "https://workos.com/docs/reference/authkit/user/delete",
+  "block": 9,
+  "line": 5,
+  "call": "user_management.send_email_change",
+  "verdict": "wrong-arg",
+  "hint": "`user_management.send_email_change`: `id_` is not a parameter; use `id`. Signature: `send_email_change(id, *, new_email, locale=None, request_options=None)`."
+ },
+ {
+  "n": 9,
+  "url": "https://workos.com/docs/reference/domain-verification/create",
+  "block": 3,
+  "line": 5,
+  "call": "organization_domains.verify_organization_domain",
+  "verdict": "wrong-arg",
+  "hint": "`organization_domains.verify_organization_domain`: `id_` is not a parameter; use `id`. Signature: `verify_organization_domain(id, *, request_options=None)`."
+ },
+ {
+  "n": 10,
+  "url": "https://workos.com/docs/reference/pipes/connected-account/create-api-key-connection",
+  "block": 11,
+  "line": 5,
+  "call": "organizations_data_providers.update_organization_connected_account",
+  "verdict": "unknown-method",
+  "hint": "The client has no `organizations_data_providers` resource; did you mean `organization_domains`?"
+ },
+ {
+  "n": 11,
+  "url": "https://workos.com/docs/reference/authkit/identity",
+  "block": 0,
+  "line": 5,
+  "call": "user_management.get_user_identities",
+  "verdict": "wrong-arg",
+  "hint": "`user_management.get_user_identities`: `id_` is not a parameter; use `id`. Signature: `get_user_identities(id, *, request_options=None)`."
+ },
+ {
+  "n": 12,
+  "url": "https://workos.com/docs/directory-sync/quick-start",
+  "block": 4,
+  "line": 9,
+  "call": "directory_sync.list_users",
+  "verdict": "wrong-arg",
+  "hint": "`directory_sync.list_users`: `group_id` is not a parameter; use `group`. Signature: `list_users(*, limit=None, before=None, after=None, order='desc', directory=None, group=None, idp_id=None, email=None, request_options=None)`."
+ },
+ {
+  "n": 13,
+  "url": "https://workos.com/docs/reference/fga/access-check",
+  "block": 0,
+  "line": 7,
+  "call": "authorization.check",
+  "verdict": "wrong-arg",
+  "hint": "`authorization.check`: `resource_id` is not a parameter; use `resource_target`. Signature: `check(organization_membership_id, *, permission_slug, resource_target, request_options=None)`."
+ },
+ {
+  "n": 14,
+  "url": "https://workos.com/docs/reference/authkit/waitlist/deny",
+  "block": 3,
+  "line": 5,
+  "call": "user_management.create_waitlist_entry_deny",
+  "verdict": "wrong-arg",
+  "hint": "`user_management.create_waitlist_entry_deny`: `id_` is not a parameter; use `id`. Signature: `create_waitlist_entry_deny(id, *, request_options=None)`."
+ },
+ {
+  "n": 15,
+  "url": "https://workos.com/docs/reference/authkit/waitlist/delete",
+  "block": 0,
+  "line": 5,
+  "call": "user_management.create_waitlist_entry_approve",
+  "verdict": "wrong-arg",
+  "hint": "`user_management.create_waitlist_entry_approve`: `id_` is not a parameter; use `id`. Signature: `create_waitlist_entry_approve(id, *, request_options=None)`."
+ }
+]

@@ -1,0 +1,104 @@
+sdk: workos-python 10.9.0
+pages: 844  manifest sha256: 5cbf31bd5e60d6b0690764792376ab4cb950fef1e3276bf6b114c7c59991522f
+python blocks: 2135  parsed: 2121  syntax-error: 14
+sdk calls found: 2093  ok: 1405  unknown-method: 142  wrong-arg: 546
+flagged calls: 688 on 221 pages
+wrong-arg calls: 546 across 80 methods on 188 pages
+wrong-arg calls using id_: 459
+problem kinds: missing-required: 48  too-many-positional: 4  unknown-accessor: 110  unknown-keyword: 531  unknown-method: 32
+
+count  verdict         call
+   24  wrong-arg       user_management.load_sealed_session
+   16  unknown-method  organizations_data_providers.create_organization_connected_account
+   16  unknown-method  organizations_data_providers.delete_organization_connected_account
+   16  unknown-method  pipes.create_finish
+   16  unknown-method  organizations_data_providers.get_organization_connected_account
+   16  unknown-method  organizations_data_providers.list_organization_data_providers
+   16  unknown-method  organizations_data_providers.update_organization_connected_account
+   15  wrong-arg       authorization.check
+   13  wrong-arg       user_management.confirm_email_change
+   13  wrong-arg       user_management.delete_user
+   13  wrong-arg       user_management.verify_email
+   13  wrong-arg       user_management.get_user
+   13  wrong-arg       user_management.send_email_change
+   13  wrong-arg       user_management.send_verification_email
+   13  wrong-arg       user_management.update_user
+   11  wrong-arg       vault.delete_kv
+   11  wrong-arg       vault.get_kv
+   11  wrong-arg       vault.update_kv
+   10  wrong-arg       vault.list_kv_metadata
+   10  wrong-arg       vault.list_kv_versions
+    9  wrong-arg       authorization.assign_role
+    9  wrong-arg       organization_membership.deactivate_organization_membership
+    9  wrong-arg       organization_membership.delete_organization_membership
+    9  wrong-arg       organization_membership.get_organization_membership
+    9  wrong-arg       organization_membership.reactivate_organization_membership
+    9  wrong-arg       organization_membership.update_organization_membership
+    8  unknown-method  agents.validate_token
+    8  wrong-arg       user_management.accept_invitation
+    8  wrong-arg       user_management.get_invitation
+    8  wrong-arg       user_management.resend_invitation
+    8  wrong-arg       user_management.revoke_invitation
+    8  wrong-arg       user_management.create_waitlist_entry_approve
+    8  wrong-arg       user_management.create_waitlist_entry
+    8  wrong-arg       user_management.delete_waitlist_entry
+    8  wrong-arg       user_management.create_waitlist_entry_deny
+    8  wrong-arg       user_management.get_waitlist
+    8  wrong-arg       user_management.list_waitlist_entries
+    8  wrong-arg       connect.delete_application
+    8  wrong-arg       connect.get_application
+    8  wrong-arg       connect.update_application
+    7  wrong-arg       directory_sync.get_user
+    7  wrong-arg       user_management.get_radar_challenge
+    7  wrong-arg       authorization.list_resources_for_membership
+    7  wrong-arg       authorization.remove_role
+    7  wrong-arg       organizations.delete_organization
+    7  wrong-arg       organizations.get_organization
+    7  wrong-arg       organizations.update_organization
+    6  wrong-arg       directory_sync.get_group
+    6  wrong-arg       api_keys.delete_api_key
+    6  wrong-arg       api_keys.create_api_key_expire
+    6  unknown-method  organizations_it_contacts.create_organization_it_contact
+    6  unknown-method  organizations_it_contacts.delete_organization_it_contact
+    6  unknown-method  organizations_it_contacts.create_it_contact_invite
+    6  unknown-method  organizations_it_contacts.list_organization_it_contacts
+    6  unknown-method  organizations_it_contacts.revoke_it_contact
+    6  wrong-arg       sso.get_authorization_url
+    5  wrong-arg       agents.get_registration
+    5  wrong-arg       agents.revoke_registration
+    5  wrong-arg       directory_sync.delete_directory
+    5  wrong-arg       directory_sync.get_directory
+    5  unknown-method  directory_sync.sync_directory
+    5  wrong-arg       organization_domains.delete_organization_domain
+    5  wrong-arg       organization_domains.get_organization_domain
+    5  wrong-arg       organization_domains.verify_organization_domain
+    5  wrong-arg       webhooks.delete_webhook_endpoint
+    5  wrong-arg       webhooks.update_webhook_endpoint
+    4  wrong-arg       radar.update_attempt
+    4  wrong-arg       sso.get_profile_and_token
+    4  wrong-arg       multi_factor_auth.verify_challenge
+    4  wrong-arg       user_management.delete_authkit_oauth_resource
+    4  wrong-arg       user_management.get_password_reset
+    4  wrong-arg       user_management.delete_redirect_uris
+    4  wrong-arg       multi_factor_auth.delete_factor
+    4  wrong-arg       multi_factor_auth.get_factor
+    4  wrong-arg       sso.delete_connection
+    4  wrong-arg       sso.get_connection
+    4  wrong-arg       connect.create_application_client_secret
+    4  wrong-arg       connect.delete_client_secret
+    4  wrong-arg       connect.list_application_client_secrets
+    3  wrong-arg       audit_logs.get_organization_audit_logs_retention
+    3  wrong-arg       audit_logs.update_organization_audit_logs_retention
+    3  wrong-arg       user_management.get_magic_auth
+    3  wrong-arg       user_management.list_sessions
+    3  wrong-arg       multi_factor_auth.challenge_factor
+    3  unknown-method  pipes.create_data_integration_token
+    3  wrong-arg       radar.remove_list_entry
+    3  wrong-arg       radar.add_list_entry
+    3  wrong-arg       sso.get_profile
+    2  wrong-arg       user_management.authenticate_with_code
+    2  wrong-arg       directory_sync.list_users
+    2  wrong-arg       directory_sync.list_groups
+    2  wrong-arg       user_management.get_email_verification
+    2  wrong-arg       user_management.get_user_identities
+    1  wrong-arg       organizations.get_audit_log_configuration

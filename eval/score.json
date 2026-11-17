@@ -1,0 +1,574 @@
+{
+ "summary": {
+  "n": 40,
+  "caught": 20,
+  "missed": 0,
+  "false_flag": 0,
+  "clean_pass": 20,
+  "wrong_by_hand": 20,
+  "drift_wrong": 18,
+  "clean_wrong": 2
+ },
+ "rows": [
+  {
+   "key": "clean__authorization__create_permission",
+   "label": "right",
+   "flagged": false,
+   "outcome": "clean_pass",
+   "calls": [
+    [
+     "authorization.create_permission",
+     "ok"
+    ]
+   ],
+   "hints": []
+  },
+  {
+   "key": "clean__authorization__delete_group_role_assignment",
+   "label": "right",
+   "flagged": false,
+   "outcome": "clean_pass",
+   "calls": [
+    [
+     "authorization.delete_group_role_assignment",
+     "ok"
+    ]
+   ],
+   "hints": []
+  },
+  {
+   "key": "clean__authorization__get_organization_role",
+   "label": "right",
+   "flagged": false,
+   "outcome": "clean_pass",
+   "calls": [
+    [
+     "authorization.get_organization_role",
+     "ok"
+    ]
+   ],
+   "hints": []
+  },
+  {
+   "key": "clean__authorization__get_resource",
+   "label": "right",
+   "flagged": false,
+   "outcome": "clean_pass",
+   "calls": [
+    [
+     "authorization.get_resource",
+     "ok"
+    ]
+   ],
+   "hints": []
+  },
+  {
+   "key": "clean__authorization__list_group_role_assignments",
+   "label": "right",
+   "flagged": false,
+   "outcome": "clean_pass",
+   "calls": [
+    [
+     "authorization.list_group_role_assignments",
+     "ok"
+    ]
+   ],
+   "hints": []
+  },
+  {
+   "key": "clean__authorization__remove_role_assignment",
+   "label": "wrong",
+   "flagged": true,
+   "outcome": "caught",
+   "calls": [
+    [
+     "authorization.remove_role",
+     "wrong-arg"
+    ]
+   ],
+   "hints": [
+    "`authorization.remove_role`: `resource_id` is not a parameter; use `resource_target`. Signature: `remove_role(organization_membership_id, *, role_slug, resource_target, request_options=None)`."
+   ]
+  },
+  {
+   "key": "clean__events__list_events",
+   "label": "right",
+   "flagged": false,
+   "outcome": "clean_pass",
+   "calls": [
+    [
+     "events.list_events",
+     "ok"
+    ]
+   ],
+   "hints": []
+  },
+  {
+   "key": "clean__organizations__create_organization",
+   "label": "right",
+   "flagged": false,
+   "outcome": "clean_pass",
+   "calls": [
+    [
+     "organizations.create_organization",
+     "ok"
+    ]
+   ],
+   "hints": []
+  },
+  {
+   "key": "clean__pipes__list_data_integrations",
+   "label": "right",
+   "flagged": false,
+   "outcome": "clean_pass",
+   "calls": [
+    [
+     "pipes.list_data_integrations",
+     "ok"
+    ]
+   ],
+   "hints": []
+  },
+  {
+   "key": "clean__user_management__authenticate_with_magic_auth",
+   "label": "right",
+   "flagged": false,
+   "outcome": "clean_pass",
+   "calls": [
+    [
+     "user_management.authenticate_with_magic_auth",
+     "ok"
+    ]
+   ],
+   "hints": []
+  },
+  {
+   "key": "clean__user_management__authenticate_with_organization_selection",
+   "label": "right",
+   "flagged": false,
+   "outcome": "clean_pass",
+   "calls": [
+    [
+     "user_management.authenticate_with_organization_selection",
+     "ok"
+    ]
+   ],
+   "hints": []
+  },
+  {
+   "key": "clean__user_management__authenticate_with_password",
+   "label": "right",
+   "flagged": false,
+   "outcome": "clean_pass",
+   "calls": [
+    [
+     "user_management.authenticate_with_password",
+     "ok"
+    ]
+   ],
+   "hints": []
+  },
+  {
+   "key": "clean__user_management__authenticate_with_totp",
+   "label": "right",
+   "flagged": false,
+   "outcome": "clean_pass",
+   "calls": [
+    [
+     "user_management.authenticate_with_totp",
+     "ok"
+    ]
+   ],
+   "hints": []
+  },
+  {
+   "key": "clean__user_management__create_redirect_uri",
+   "label": "right",
+   "flagged": false,
+   "outcome": "clean_pass",
+   "calls": [
+    [
+     "user_management.create_redirect_uri",
+     "ok"
+    ]
+   ],
+   "hints": []
+  },
+  {
+   "key": "clean__user_management__get_jwks_url",
+   "label": "right",
+   "flagged": false,
+   "outcome": "clean_pass",
+   "calls": [
+    [
+     "user_management.get_jwks_url",
+     "ok"
+    ]
+   ],
+   "hints": []
+  },
+  {
+   "key": "clean__user_management__get_user_by_external_id",
+   "label": "right",
+   "flagged": false,
+   "outcome": "clean_pass",
+   "calls": [
+    [
+     "user_management.get_user_by_external_id",
+     "ok"
+    ]
+   ],
+   "hints": []
+  },
+  {
+   "key": "clean__user_management__reset_password",
+   "label": "wrong",
+   "flagged": true,
+   "outcome": "caught",
+   "calls": [
+    [
+     "user_management.reset_password",
+     "wrong-arg"
+    ]
+   ],
+   "hints": [
+    "`user_management.reset_password`: `token` is not a parameter; `new_password` is not a parameter; `email` is required. Signature: `reset_password(*, email, locale=None, request_options=None)`."
+   ]
+  },
+  {
+   "key": "clean__user_management__send_invitation",
+   "label": "right",
+   "flagged": false,
+   "outcome": "clean_pass",
+   "calls": [
+    [
+     "user_management.send_invitation",
+     "ok"
+    ]
+   ],
+   "hints": []
+  },
+  {
+   "key": "clean__vault__decrypt",
+   "label": "right",
+   "flagged": false,
+   "outcome": "clean_pass",
+   "calls": [
+    [
+     "vault.decrypt",
+     "ok"
+    ]
+   ],
+   "hints": []
+  },
+  {
+   "key": "clean__vault__list_kv",
+   "label": "right",
+   "flagged": false,
+   "outcome": "clean_pass",
+   "calls": [
+    [
+     "vault.list_kv",
+     "ok"
+    ]
+   ],
+   "hints": []
+  },
+  {
+   "key": "drift__agents__revoke_registration",
+   "label": "wrong",
+   "flagged": true,
+   "outcome": "caught",
+   "calls": [
+    [
+     "agents.revoke_registration",
+     "wrong-arg"
+    ]
+   ],
+   "hints": [
+    "`agents.revoke_registration`: `id_` is not a parameter; use `id`. Signature: `revoke_registration(id, *, request_options=None)`."
+   ]
+  },
+  {
+   "key": "drift__api_keys__delete_api_key",
+   "label": "wrong",
+   "flagged": true,
+   "outcome": "caught",
+   "calls": [
+    [
+     "api_keys.delete_api_key",
+     "wrong-arg"
+    ]
+   ],
+   "hints": [
+    "`api_keys.delete_api_key`: `id_` is not a parameter; use `id`. Signature: `delete_api_key(id, *, request_options=None)`."
+   ]
+  },
+  {
+   "key": "drift__authorization__check",
+   "label": "wrong",
+   "flagged": true,
+   "outcome": "caught",
+   "calls": [
+    [
+     "authorization.check",
+     "wrong-arg"
+    ]
+   ],
+   "hints": [
+    "`authorization.check`: `resource_id` is not a parameter; use `resource_target`. Signature: `check(organization_membership_id, *, permission_slug, resource_target, request_options=None)`."
+   ]
+  },
+  {
+   "key": "drift__connect__update_application",
+   "label": "wrong",
+   "flagged": true,
+   "outcome": "caught",
+   "calls": [
+    [
+     "connect.update_application",
+     "wrong-arg"
+    ]
+   ],
+   "hints": [
+    "`connect.update_application`: `id_` is not a parameter; use `id`. Signature: `update_application(id, *, name=None, description=NOT_GIVEN, scopes=NOT_GIVEN, redirect_uris=NOT_GIVEN, cors_origins=NOT_GIVEN, request_options=None)`."
+   ]
+  },
+  {
+   "key": "drift__directory_sync__get_group",
+   "label": "wrong",
+   "flagged": true,
+   "outcome": "caught",
+   "calls": [
+    [
+     "directory_sync.get_group",
+     "wrong-arg"
+    ]
+   ],
+   "hints": [
+    "`directory_sync.get_group`: `group_id` is not a parameter; `id` is required. Signature: `get_group(id, *, request_options=None)`."
+   ]
+  },
+  {
+   "key": "drift__multi_factor_auth__verify_challenge",
+   "label": "wrong",
+   "flagged": true,
+   "outcome": "caught",
+   "calls": [
+    [
+     "multi_factor_auth.verify_challenge",
+     "wrong-arg"
+    ]
+   ],
+   "hints": [
+    "`multi_factor_auth.verify_challenge`: `id_` is not a parameter; use `id`. Signature: `verify_challenge(id, *, code, request_options=None)`."
+   ]
+  },
+  {
+   "key": "drift__organization_domains__get_organization_domain",
+   "label": "wrong",
+   "flagged": true,
+   "outcome": "caught",
+   "calls": [
+    [
+     "organization_domains.get_organization_domain",
+     "wrong-arg"
+    ]
+   ],
+   "hints": [
+    "`organization_domains.get_organization_domain`: `organization_domain_id` is not a parameter; `id` is required. Signature: `get_organization_domain(id, *, request_options=None)`."
+   ]
+  },
+  {
+   "key": "drift__organization_membership__deactivate_organization_membership",
+   "label": "wrong",
+   "flagged": true,
+   "outcome": "caught",
+   "calls": [
+    [
+     "organization_membership.deactivate_organization_membership",
+     "wrong-arg"
+    ]
+   ],
+   "hints": [
+    "`organization_membership.deactivate_organization_membership`: `id_` is not a parameter; use `id`. Signature: `deactivate_organization_membership(id, *, request_options=None)`."
+   ]
+  },
+  {
+   "key": "drift__organization_membership__reactivate_organization_membership",
+   "label": "wrong",
+   "flagged": true,
+   "outcome": "caught",
+   "calls": [
+    [
+     "organization_membership.reactivate_organization_membership",
+     "wrong-arg"
+    ]
+   ],
+   "hints": [
+    "`organization_membership.reactivate_organization_membership`: `id_` is not a parameter; use `id`. Signature: `reactivate_organization_membership(id, *, request_options=None)`."
+   ]
+  },
+  {
+   "key": "drift__organizations__get_organization",
+   "label": "wrong",
+   "flagged": true,
+   "outcome": "caught",
+   "calls": [
+    [
+     "organizations.get_organization",
+     "wrong-arg"
+    ]
+   ],
+   "hints": [
+    "`organizations.get_organization`: `organization_id` is not a parameter; `id` is required. Signature: `get_organization(id, *, request_options=None)`."
+   ]
+  },
+  {
+   "key": "drift__organizations__update_organization",
+   "label": "wrong",
+   "flagged": true,
+   "outcome": "caught",
+   "calls": [
+    [
+     "organizations.update_organization",
+     "wrong-arg"
+    ]
+   ],
+   "hints": [
+    "`organizations.update_organization`: `id_` is not a parameter; use `id`. Signature: `update_organization(id, *, name=None, allow_profiles_outside_organization=None, domains=None, domain_data=None, stripe_customer_id=None, metadata=NOT_GIVEN, external_id=NOT_GIVEN, request_options=None)`."
+   ]
+  },
+  {
+   "key": "drift__radar__add_list_entry",
+   "label": "wrong",
+   "flagged": true,
+   "outcome": "caught",
+   "calls": [
+    [
+     "radar.add_list_entry",
+     "wrong-arg"
+    ]
+   ],
+   "hints": [
+    "`radar.add_list_entry`: `type_` is not a parameter; use `type`. Signature: `add_list_entry(type, action, *, entry, request_options=None)`."
+   ]
+  },
+  {
+   "key": "drift__sso__get_connection",
+   "label": "wrong",
+   "flagged": true,
+   "outcome": "caught",
+   "calls": [
+    [
+     "sso.get_connection",
+     "wrong-arg"
+    ]
+   ],
+   "hints": [
+    "`sso.get_connection`: `connection_id` is not a parameter; `id` is required. Signature: `get_connection(id, *, request_options=None)`."
+   ]
+  },
+  {
+   "key": "drift__sso__get_profile",
+   "label": "right",
+   "flagged": false,
+   "outcome": "clean_pass",
+   "calls": [
+    [
+     "sso.get_profile",
+     "ok"
+    ]
+   ],
+   "hints": []
+  },
+  {
+   "key": "drift__sso__get_profile_and_token",
+   "label": "right",
+   "flagged": false,
+   "outcome": "clean_pass",
+   "calls": [
+    [
+     "sso.get_profile_and_token",
+     "ok"
+    ]
+   ],
+   "hints": []
+  },
+  {
+   "key": "drift__user_management__accept_invitation",
+   "label": "wrong",
+   "flagged": true,
+   "outcome": "caught",
+   "calls": [
+    [
+     "user_management.accept_invitation",
+     "wrong-arg"
+    ]
+   ],
+   "hints": [
+    "`user_management.accept_invitation`: `id_` is not a parameter; use `id`. Signature: `accept_invitation(id, *, request_options=None)`."
+   ]
+  },
+  {
+   "key": "drift__user_management__get_magic_auth",
+   "label": "wrong",
+   "flagged": true,
+   "outcome": "caught",
+   "calls": [
+    [
+     "user_management.get_magic_auth",
+     "wrong-arg"
+    ]
+   ],
+   "hints": [
+    "`user_management.get_magic_auth`: `magic_auth_id` is not a parameter; `id` is required. Signature: `get_magic_auth(id, *, request_options=None)`."
+   ]
+  },
+  {
+   "key": "drift__user_management__get_password_reset",
+   "label": "wrong",
+   "flagged": true,
+   "outcome": "caught",
+   "calls": [
+    [
+     "user_management.get_password_reset",
+     "wrong-arg"
+    ]
+   ],
+   "hints": [
+    "`user_management.get_password_reset`: `password_reset_id` is not a parameter; `id` is required. Signature: `get_password_reset(id, *, request_options=None)`."
+   ]
+  },
+  {
+   "key": "drift__user_management__get_user",
+   "label": "wrong",
+   "flagged": true,
+   "outcome": "caught",
+   "calls": [
+    [
+     "user_management.get_user",
+     "wrong-arg"
+    ]
+   ],
+   "hints": [
+    "`user_management.get_user`: `user_id` is not a parameter; `id` is required. Signature: `get_user(id, *, request_options=None)`."
+   ]
+  },
+  {
+   "key": "drift__vault__list_kv_metadata",
+   "label": "wrong",
+   "flagged": true,
+   "outcome": "caught",
+   "calls": [
+    [
+     "vault.list_kv_metadata",
+     "wrong-arg"
+    ]
+   ],
+   "hints": [
+    "`vault.list_kv_metadata`: `id_` is not a parameter; use `id`. Signature: `list_kv_metadata(id, *, request_options=None)`."
+   ]
+  }
+ ]
+}
