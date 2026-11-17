@@ -1,7 +1,7 @@
 # answer-check
 
-A docs assistant can retrieve the SDK source and still answer with the docs' version of a call when the two
-disagree. `answer-check` catches that before the answer reaches the user. It parses the Python code blocks in a
+A docs assistant can hand its model a wrong code snippet, or the model can invent an argument, and the answer
+still reads fine. `answer-check` catches that before the answer reaches the user. It parses the Python code blocks in a
 drafted answer, finds the SDK calls, and checks each one against signatures read from the SDK's own source.
 For each call it returns a verdict and a one-line repair hint you can feed back to the model for one retry.
 
@@ -19,7 +19,7 @@ Standard library only (tested on Python 3.12.10).
 | unknown-method (would raise `AttributeError`) | 142 |
 
 459 of the 546 wrong-arg calls pass `id_=` where the SDK takes `id`. The docs snippets come from a generator that
-renames `id` to `id_`, while the SDK generator keeps `id`. A fix for that generator is open upstream:
+renames `id` to `id_`, while the SDK generator keeps `id`. A fix for that generator is open upstream (not merged yet):
 [workos/oagen-emitters#318](https://github.com/workos/oagen-emitters/pull/318).
 
 A 15-call random hand sample of the flags (seed in `drift/`) was checked against the SDK source: 15/15 verdicts
@@ -35,6 +35,8 @@ source *before* the checker ran (`eval/hand-labels.json`).
 | caught by answer-check | 20 of 20 |
 | missed | 0 |
 | false flags on the 20 working answers | 0 |
+| broken answers repeating a wrong argument from the assistant's own tool output (docs snippets) | 11 of 20 |
+| broken answers inventing an argument no tool returned | 9 of 20 |
 
 Per-question verdicts and hints: `eval/score.json`. The answers themselves are not redistributed here.
 
@@ -52,7 +54,7 @@ question -> retrieve -> draft answer -> answer-check -> ok: stream as is
                                                   one repair turn with the hints, check again, then stream
 ```
 
-Checking a short answer takes well under a millisecond after a 10 ms index load (measured on a laptop), so it can sit between
+It is one `ast.parse` per code block and no model call, so it can sit between
 generation and the end of the stream. Rebuild the index on each SDK release.
 
 ## Use
